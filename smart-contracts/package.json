@@ -1,6 +1,7 @@
 {
   "name": "hardhat-project",
   "devDependencies": {
+    "@nomicfoundation/hardhat-foundry": "^1.0.1",
     "@nomiclabs/hardhat-ethers": "^2.2.3",
     "@nomiclabs/hardhat-waffle": "^2.0.5",
     "chai": "^4.3.7",
@@ -10,6 +11,7 @@
   },
   "dependencies": {
     "@openzeppelin/contracts": "^4.8.3",
-    "@uniswap/v3-periphery": "^1.4.3"
+    "@uniswap/v3-periphery": "^1.4.3",
+    "hardhat-deploy": "^0.11.26"
   }
 }

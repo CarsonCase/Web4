@@ -15,6 +15,8 @@ contract Plgn_swap_uniswap is IPlugin{
     }
 
     function executeTransaction(address inToken, uint inAmount, address outToken, uint minOutAmount, address receiver, bytes memory data) external{
+        TransferHelper.safeApprove(inToken, address(swapRouter), inAmount);
+
         ISwapRouter.ExactInputSingleParams memory params =
             ISwapRouter.ExactInputSingleParams({
                 tokenIn: inToken,
