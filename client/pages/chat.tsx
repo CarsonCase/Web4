@@ -3,13 +3,14 @@ import { OutlinedInput, Typography } from "@mui/material";
 import Box from "@mui/material/Box";
 import IconButton from "@mui/material/IconButton";
 import InputAdornment from "@mui/material/InputAdornment";
-import React, { ChangeEvent } from "react";
+import React, { ChangeEvent, useReducer } from "react";
 import { ChatLayout } from "../src/layout/ChatLayout";
+import { initialState, reducer } from "../src/store/reducer";
 import { ConnectWalletButton } from "../src/wallet/ConnectWalletButton";
 
 export default function Chat() {
   const [text, setText] = React.useState("");
-
+  const [state, dispatch] = useReducer(reducer, initialState);
   const handleOnChange = (event: ChangeEvent<HTMLInputElement>) => {
     setText(event.target.value);
   };
@@ -26,7 +27,7 @@ export default function Chat() {
       >
         <Box sx={{ flexGrow: 1 }}>
           <Typography>{text}</Typography>
-          <ConnectWalletButton setIsLoading={() => false} />
+          <ConnectWalletButton />
         </Box>
 
         {/* Input */}
