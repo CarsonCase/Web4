@@ -1,17 +1,16 @@
-import * as React from 'react';
+import createEmotionServer from "@emotion/server/create-instance";
+import { AppType } from "next/app";
 import Document, {
-  Html,
+  DocumentContext,
+  DocumentProps,
   Head,
+  Html,
   Main,
   NextScript,
-  DocumentProps,
-  DocumentContext,
-} from 'next/document';
-import createEmotionServer from '@emotion/server/create-instance';
-import { AppType } from 'next/app';
-import theme, { roboto } from '../src/theme';
-import createEmotionCache from '../src/createEmotionCache';
-import { MyAppProps } from './_app';
+} from "next/document";
+import * as React from "react";
+import createEmotionCache from "../src/createEmotionCache";
+import { MyAppProps, roboto } from "./_app";
 
 interface MyDocumentProps extends DocumentProps {
   emotionStyleTags: JSX.Element[];
@@ -22,7 +21,7 @@ export default function MyDocument({ emotionStyleTags }: MyDocumentProps) {
     <Html lang="en" className={roboto.className}>
       <Head>
         {/* PWA primary color */}
-        <meta name="theme-color" content={theme.palette.primary.main} />
+        <meta name="theme-color" content={"#556cd6"} />
         <link rel="shortcut icon" href="/favicon.ico" />
         <meta name="emotion-insertion-point" content="" />
         {emotionStyleTags}
@@ -69,7 +68,9 @@ MyDocument.getInitialProps = async (ctx: DocumentContext) => {
 
   ctx.renderPage = () =>
     originalRenderPage({
-      enhanceApp: (App: React.ComponentType<React.ComponentProps<AppType> & MyAppProps>) =>
+      enhanceApp: (
+        App: React.ComponentType<React.ComponentProps<AppType> & MyAppProps>
+      ) =>
         function EnhanceApp(props) {
           return <App emotionCache={cache} {...props} />;
         },
@@ -81,7 +82,7 @@ MyDocument.getInitialProps = async (ctx: DocumentContext) => {
   const emotionStyles = extractCriticalToChunks(initialProps.html);
   const emotionStyleTags = emotionStyles.styles.map((style) => (
     <style
-      data-emotion={`${style.key} ${style.ids.join(' ')}`}
+      data-emotion={`${style.key} ${style.ids.join(" ")}`}
       key={style.key}
       // eslint-disable-next-line react/no-danger
       dangerouslySetInnerHTML={{ __html: style.css }}

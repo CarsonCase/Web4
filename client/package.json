@@ -16,7 +16,11 @@
     "@emotion/styled": "latest",
     "@mui/icons-material": "latest",
     "@mui/material": "latest",
+    "@thirdweb-dev/react": "^3.11.7",
+    "@thirdweb-dev/sdk": "^3.10.10",
+    "ethers": "^5.7.2",
     "next": "latest",
+    "notistack": "^3.0.1",
     "react": "latest",
     "react-dom": "latest"
   },
