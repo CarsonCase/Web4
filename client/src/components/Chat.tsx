@@ -2,7 +2,6 @@ import SendIcon from "@mui/icons-material/Send";
 import { OutlinedInput } from "@mui/material";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
 import InputAdornment from "@mui/material/InputAdornment";
 import Toolbar from "@mui/material/Toolbar";
@@ -16,7 +15,6 @@ import RouterAbi from "../assets/builds/router.abi.json";
 import { initialState, reducer } from "../store/reducer";
 
 import { Messages } from "./Messages";
-import { ConnectWalletButton } from "./wallet/ConnectWalletButton";
 
 const drawerWidth = 240;
 
@@ -225,10 +223,6 @@ export const Chat = () => {
       >
         {/* Content */}
         <Box sx={{ flexGrow: 1, pb: 50 }}>
-          <ConnectWalletButton />
-          <Button variant="contained" onClick={handleDoTransaction}>
-            Do Transaction
-          </Button>
           <Messages messageList={messageList} />
         </Box>
 
@@ -250,6 +244,7 @@ export const Chat = () => {
               id="standard-adornment-password"
               type="text"
               value={text}
+              sx={{ mb: 2 }}
               onChange={handleOnChange}
               onKeyDown={handleKeyDown}
               fullWidth
