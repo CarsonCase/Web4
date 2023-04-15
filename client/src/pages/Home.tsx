@@ -1,8 +1,8 @@
+import Brightness7Icon from "@mui/icons-material/Brightness7";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
-import InfoIcon from "@mui/icons-material/Info";
+import DarkModeIcon from "@mui/icons-material/DarkMode";
 import MenuIcon from "@mui/icons-material/Menu";
-import SettingsIcon from "@mui/icons-material/Settings";
 import MuiAppBar, { AppBarProps as MuiAppBarProps } from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
@@ -98,21 +98,11 @@ export const Home = () => {
       payload,
     });
   };
-
+  // Brightness7Icon
   const secondaryList = [
     {
-      title: "About",
-      icon: <InfoIcon />,
-      action: () => null,
-    },
-    {
-      title: "Settings",
-      icon: <SettingsIcon />,
-      action: () => null,
-    },
-    {
-      title: "Dark/Light Mode",
-      icon: <SettingsIcon />,
+      title: "Dark/Light Mode Toggle",
+      icon: state.isDarkMode ? <DarkModeIcon /> : <Brightness7Icon />,
       action: () => handleDarkModeChange(!state.isDarkMode),
     },
   ];
