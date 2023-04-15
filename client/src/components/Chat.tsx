@@ -1,0 +1,97 @@
+import SendIcon from "@mui/icons-material/Send";
+import { OutlinedInput } from "@mui/material";
+import Box from "@mui/material/Box";
+import CircularProgress from "@mui/material/CircularProgress";
+import IconButton from "@mui/material/IconButton";
+import InputAdornment from "@mui/material/InputAdornment";
+import axios from "axios";
+import React, { ChangeEvent, useReducer } from "react";
+import { initialState, reducer } from "../store/reducer";
+import { Messages } from "./Messages";
+import { ConnectWalletButton } from "./wallet/ConnectWalletButton";
+
+export const Chat = () => {
+  const [text, setText] = React.useState("");
+  const [isSending, setIsSending] = React.useState<boolean>(false);
+  const [response, setResponse] = React.useState<any>("");
+  const [state, dispatch] = useReducer(reducer, initialState);
+
+  const handleOnChange = (event: ChangeEvent<HTMLInputElement>) => {
+    setText(event.target.value);
+  };
+
+  const handleKeyDown = (event: any) => {
+    if (event.key === "Enter") {
+      handleOnSubmit();
+    }
+  };
+
+  const handleOnSubmit = async () => {
+    let response: any;
+    console.log("text", text);
+    try {
+      setIsSending(true);
+      const url =
+        "https://pxjraiea3miarma4uhfqncorle0ajmhl.lambda-url.ap-southeast-2.on.aws";
+      response = await axios.post(
+        url,
+        {
+          payload: text,
+        },
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      setResponse(response);
+      console.log(response);
+    } catch (ex) {
+      console.log("Error with sending to lambda", ex);
+    } finally {
+      setIsSending(false);
+    }
+  };
+
+  return (
+    <>
+      {/* Content */}
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          height: "100%",
+        }}
+      >
+        <Box sx={{ flexGrow: 1 }}>
+          <ConnectWalletButton />
+          <Messages data={response?.data?.content} />
+        </Box>
+
+        {/* Input */}
+        <Box>
+          <OutlinedInput
+            id="standard-adornment-password"
+            type="text"
+            value={text}
+            onChange={handleOnChange}
+            onKeyDown={handleKeyDown}
+            fullWidth
+            placeholder='Ask me "how much USD worth in my wallet?"'
+            endAdornment={
+              <InputAdornment position="end">
+                {isSending ? (
+                  <CircularProgress />
+                ) : (
+                  <IconButton disabled={!text} onClick={handleOnSubmit}>
+                    <SendIcon color={!text ? "inherit" : "primary"} />
+                  </IconButton>
+                )}
+              </InputAdornment>
+            }
+          />
+        </Box>
+      </Box>
+    </>
+  );
+};

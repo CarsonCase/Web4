@@ -22,6 +22,7 @@ import Typography from "@mui/material/Typography";
 import { styled, useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import React, { useContext } from "react";
+import { Chat } from "../components/Chat";
 import { GlobalAppContext } from "../store/global-app-context";
 import { ActionTypes } from "../store/reducer";
 
@@ -32,6 +33,7 @@ const Main = styled("main", { shouldForwardProp: (prop) => prop !== "open" })<{
 }>(({ theme, open }) => ({
   flexGrow: 1,
   height: "100vh",
+  width: "100%",
   padding: theme.spacing(3),
   transition: theme.transitions.create("margin", {
     easing: theme.transitions.easing.sharp,
@@ -77,11 +79,7 @@ const DrawerHeader = styled("div")(({ theme }) => ({
   justifyContent: "flex-end",
 }));
 
-interface IProps {
-  children: any;
-}
-
-export const ChatLayout = ({ children }: IProps) => {
+export const Home = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery((theme: any) => theme.breakpoints.down("md"));
   const [open, setOpen] = React.useState(!isMobile);
@@ -204,7 +202,7 @@ export const ChatLayout = ({ children }: IProps) => {
       <Main open={open}>
         {isMobile && <DrawerHeader />}
         <Container maxWidth="md" sx={{ height: "100%" }}>
-          {children}
+          <Chat />
         </Container>
       </Main>
     </Box>

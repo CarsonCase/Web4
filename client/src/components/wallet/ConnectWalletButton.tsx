@@ -1,6 +1,6 @@
 import { ConnectWallet } from "@thirdweb-dev/react";
 import React, { useReducer } from "react";
-import { initialState, reducer } from "../store/reducer";
+import { initialState, reducer } from "../../store/reducer";
 
 export const ConnectWalletButton: React.FC = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
