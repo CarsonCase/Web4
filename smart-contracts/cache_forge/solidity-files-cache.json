@@ -1867,8 +1867,8 @@
       }
     },
     "test/Plgn_payment_superfluid.t.sol": {
-      "lastModificationDate": 1681541276064,
-      "contentHash": "b9d18ad7acc6dad81cbbb3a74c11274b",
+      "lastModificationDate": 1681542419060,
+      "contentHash": "6c41b0e03032f8f60bca99efc9ad74b4",
       "sourceName": "test/Plgn_payment_superfluid.t.sol",
       "solcConfig": {
         "settings": {

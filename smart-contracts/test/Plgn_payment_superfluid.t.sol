@@ -15,6 +15,7 @@ contract Plgn_swap_uniswapTest is Test {
     address DAI = 0x8f3Cf7ad23Cd3CaDbD9735AFf958023239c6A063;
     address WETH = 0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619;
     int96 flowRate = 1000;
+    address superToken;
 
     Plgn_payment_superfluid instance;
     function setUp() public {
@@ -22,18 +23,20 @@ contract Plgn_swap_uniswapTest is Test {
         vm.selectFork(polygonFork);
         instance = new Plgn_payment_superfluid();
         vm.startPrank(0xF977814e90dA44bFA03b6295A0616a897441aceC);
-        ISuperToken(instance.superTokensByBase(DAI)).setFlowPermissions(address(instance), true, true, true, flowRate);
+
+        superToken = instance.superTokensByBase(DAI);
+        ISuperToken(superToken).setFlowPermissions(address(instance), true, true, true, flowRate);
 
         IERC20(DAI).transfer(address(instance), 1e18);
     }
 
     function testNetworkCorrect() external{
-        assertEq(instance.superTokensByBase(DAI), 0x1305F6B6Df9Dc47159D12Eb7aC2804d4A33173c2);
+        assertEq(superToken, 0x1305F6B6Df9Dc47159D12Eb7aC2804d4A33173c2);
     }
 
     function testStartAndStopSteam() external{
         console.log(msg.sender);
-        uint balBefore = IERC20(DAI).balanceOf(0xAEB478F060B582d3E8d752bcb3430B59FAe4cAF3);
+        uint balBefore = ISuperToken(superToken).balanceOf(0xAEB478F060B582d3E8d752bcb3430B59FAe4cAF3);
         
         bytes memory data;
         data = abi.encode(flowRate);
@@ -42,8 +45,8 @@ contract Plgn_swap_uniswapTest is Test {
         vm.warp(block.timestamp+24*60*60);
         instance.executeTransaction(address(0), 1e18, DAI, 0, 0xAEB478F060B582d3E8d752bcb3430B59FAe4cAF3, "");
         console.log(balBefore);
-        console.log(IERC20(DAI).balanceOf(0xAEB478F060B582d3E8d752bcb3430B59FAe4cAF3));
-        assertEq(IERC20(DAI).balanceOf(0xAEB478F060B582d3E8d752bcb3430B59FAe4cAF3), balBefore);
+        console.log(ISuperToken(superToken).balanceOf(0xAEB478F060B582d3E8d752bcb3430B59FAe4cAF3));
+        assertEq(ISuperToken(superToken).balanceOf(0xAEB478F060B582d3E8d752bcb3430B59FAe4cAF3), balBefore + (uint96(flowRate) * 24*60*60));
 
         // todo test superfluid tokens were really received
     }
