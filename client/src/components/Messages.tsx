@@ -30,12 +30,12 @@ export const Messages: React.FC<IProps> = ({ messageList }) => {
           component="img"
           src="https://res.cloudinary.com/dpaucaa0u/image/upload/v1681586704/Web4Chat/web4_logo.png"
           alt="Web4 Logo"
-          sx={{ width: "50%" }}
+          sx={{ width: "30%" }}
         />
         <Typography variant="h2" component="h2" align="center" sx={{ mb: 3 }}>
           Welcome to Web4 Chat!
         </Typography>
-        <Typography variant="body2" component="p" sx={{ mb: 3 }}>
+        <Typography variant="body1" component="p" sx={{ mb: 3 }}>
           Web4 aims to simplify crypto portfolios by interfacing with GPT-4s
           natural language processing instead of confusing webapp GUIs. Our
           framework offers an intuitive alternative that is network-agnostic and
