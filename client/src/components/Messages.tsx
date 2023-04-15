@@ -56,7 +56,7 @@ export const Messages: React.FC<IProps> = ({ messageList }) => {
         sx={{
           display: "flex",
           gap: 3,
-          backgroundColor: message.role === "user" ? "#d4d4d4" : "#999999",
+          backgroundColor: message.role === "user" ? "#191919" : "#242424",
           mt: 3,
           borderRadius: "24px",
           p: 3,
