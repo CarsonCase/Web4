@@ -1,0 +1,61 @@
+[
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "address",
+            "name": "smartContract",
+            "type": "address"
+          },
+          { "internalType": "address", "name": "in_token", "type": "address" },
+          { "internalType": "uint256", "name": "in_am", "type": "uint256" },
+          { "internalType": "address", "name": "out_token", "type": "address" },
+          {
+            "internalType": "uint256",
+            "name": "min_out_am",
+            "type": "uint256"
+          },
+          { "internalType": "address", "name": "receiver", "type": "address" },
+          { "internalType": "bytes", "name": "data", "type": "bytes" }
+        ],
+        "internalType": "struct TX_Object",
+        "name": "",
+        "type": "tuple"
+      },
+      { "internalType": "string", "name": "", "type": "string" }
+    ],
+    "name": "ExecutionError",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "address",
+            "name": "smartContract",
+            "type": "address"
+          },
+          { "internalType": "address", "name": "in_token", "type": "address" },
+          { "internalType": "uint256", "name": "in_am", "type": "uint256" },
+          { "internalType": "address", "name": "out_token", "type": "address" },
+          {
+            "internalType": "uint256",
+            "name": "min_out_am",
+            "type": "uint256"
+          },
+          { "internalType": "address", "name": "receiver", "type": "address" },
+          { "internalType": "bytes", "name": "data", "type": "bytes" }
+        ],
+        "internalType": "struct TX_Object[]",
+        "name": "toExecute",
+        "type": "tuple[]"
+      }
+    ],
+    "name": "executeTransactions",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  }
+]
