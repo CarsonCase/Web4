@@ -1,7 +1,8 @@
 import SendIcon from "@mui/icons-material/Send";
-import { OutlinedInput } from "@mui/material";
+import { CircularProgress, OutlinedInput } from "@mui/material";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
+import Container from "@mui/material/Container";
 import IconButton from "@mui/material/IconButton";
 import InputAdornment from "@mui/material/InputAdornment";
 import Toolbar from "@mui/material/Toolbar";
@@ -224,6 +225,20 @@ export const Chat = () => {
         {/* Content */}
         <Box sx={{ flexGrow: 1, pb: 50 }}>
           <Messages messageList={messageList} />
+          {isSending && (
+            <Box
+              sx={{
+                width: "100%",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+                alignItems: "center",
+                mt: 3,
+              }}
+            >
+              <CircularProgress />
+            </Box>
+          )}
         </Box>
 
         {/* Input */}
@@ -240,24 +255,26 @@ export const Chat = () => {
           }}
         >
           <Toolbar>
-            <OutlinedInput
-              id="standard-adornment-password"
-              type="text"
-              value={text}
-              sx={{ mb: 2 }}
-              onChange={handleOnChange}
-              onKeyDown={handleKeyDown}
-              fullWidth
-              disabled={isSending}
-              placeholder='Ask me "how much USD worth in my wallet?"'
-              endAdornment={
-                <InputAdornment position="end">
-                  <IconButton disabled={!text} onClick={handleOnSubmit}>
-                    <SendIcon color={!text ? "inherit" : "primary"} />
-                  </IconButton>
-                </InputAdornment>
-              }
-            />
+            <Container maxWidth="md">
+              <OutlinedInput
+                id="standard-adornment-password"
+                type="text"
+                value={text}
+                sx={{ mb: 2 }}
+                onChange={handleOnChange}
+                onKeyDown={handleKeyDown}
+                fullWidth
+                disabled={isSending}
+                placeholder='Ask me "how much USD worth in my wallet?"'
+                endAdornment={
+                  <InputAdornment position="end">
+                    <IconButton disabled={!text} onClick={handleOnSubmit}>
+                      <SendIcon color={!text ? "inherit" : "primary"} />
+                    </IconButton>
+                  </InputAdornment>
+                }
+              />
+            </Container>
           </Toolbar>
         </AppBar>
       </Box>
