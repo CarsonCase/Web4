@@ -19,7 +19,7 @@ export default function App() {
         palette: {
           mode: state.isDarkMode ? "dark" : "light",
           primary: {
-            main: "#556cd6",
+            main: "#fd7565",
           },
           secondary: {
             main: "#19857b",

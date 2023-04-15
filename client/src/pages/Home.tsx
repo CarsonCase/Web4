@@ -1,10 +1,7 @@
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
-import ExitToAppIcon from "@mui/icons-material/ExitToApp";
 import InfoIcon from "@mui/icons-material/Info";
-import MailIcon from "@mui/icons-material/Mail";
 import MenuIcon from "@mui/icons-material/Menu";
-import InboxIcon from "@mui/icons-material/MoveToInbox";
 import SettingsIcon from "@mui/icons-material/Settings";
 import MuiAppBar, { AppBarProps as MuiAppBarProps } from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
@@ -23,6 +20,8 @@ import { styled, useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import React, { useContext } from "react";
 import { Chat } from "../components/Chat";
+import { ConnectWalletButton } from "../components/wallet/ConnectWalletButton";
+
 import { GlobalAppContext } from "../store/global-app-context";
 import { ActionTypes } from "../store/reducer";
 
@@ -116,11 +115,6 @@ export const Home = () => {
       icon: <SettingsIcon />,
       action: () => handleDarkModeChange(!state.isDarkMode),
     },
-    {
-      title: "Log out",
-      icon: <ExitToAppIcon />,
-      action: () => null,
-    },
   ];
 
   return (
@@ -170,19 +164,16 @@ export const Home = () => {
             <Divider />
           </>
         )}
-        <Box sx={{ flexGrow: 1 }}>
-          <List>
-            {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
-              <ListItem key={text} disablePadding>
-                <ListItemButton>
-                  <ListItemIcon>
-                    {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                  </ListItemIcon>
-                  <ListItemText primary={text} />
-                </ListItemButton>
-              </ListItem>
-            ))}
-          </List>
+        <Box
+          sx={{
+            flexGrow: 1,
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            py: 2,
+          }}
+        >
+          <ConnectWalletButton />
         </Box>
         <Divider />
         <Box>
