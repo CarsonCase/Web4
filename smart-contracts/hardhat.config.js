@@ -34,14 +34,14 @@ module.exports = {
       chainId: 80001,
       accounts: [pkey]
     },  
-  },
-  hardhat: {
-    accounts: forkingAccounts,
-    forking: {
-      url: `https://polygon-mainnet.g.alchemy.com/v2/iQn6fZKGOVV0MFqU45Grq9KV6TaeblWr`,
-      enabled: true,
-      timeout: 0,
-    },
+    hardhat: {
+      accounts: forkingAccounts,
+      forking: {
+        url: `https://polygon-mainnet.g.alchemy.com/v2/iQn6fZKGOVV0MFqU45Grq9KV6TaeblWr`,
+        enabled: true,
+        timeout: 0,
+      },
+    },  
   },
   etherscan: {
     apiKey: "4Y42Z4WA94GHR6M5279Y64HYI5SMJGPJ88"
