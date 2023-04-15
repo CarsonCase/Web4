@@ -52,7 +52,7 @@
   "methodIdentifiers": {
     "executeTransaction(address,uint256,address,uint256,address,bytes)": "e20418ef"
   },
-  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.19+commit.7dd6d404\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"},{\"internalType\":\"bytes\",\"name\":\"\",\"type\":\"bytes\"}],\"name\":\"executeTransaction\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/core/IPlugin.sol\":\"IPlugin\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":@ensdomains/=node_modules/@ensdomains/\",\":@openzeppelin/=node_modules/@openzeppelin/\",\":@uniswap/=node_modules/@uniswap/\",\":base64-sol/=node_modules/base64-sol/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":forge-std/=lib/forge-std/src/\",\":hardhat/=node_modules/hardhat/\"]},\"sources\":{\"contracts/core/IPlugin.sol\":{\"keccak256\":\"0x2c00d6a3771f6388aa779cf0813287c2e47bf9087a3f5561748972725a38648a\",\"license\":\"Unlicense\",\"urls\":[\"bzz-raw://f87ccad34592f12ac8c84d3db1146f25633150c91ec281971214814129fc277a\",\"dweb:/ipfs/QmWSVH3qmWnZRjXVBZDi4xUNSVRzh7RpPCtZ2qXhakH3cr\"]}},\"version\":1}",
+  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.19+commit.7dd6d404\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"},{\"internalType\":\"bytes\",\"name\":\"\",\"type\":\"bytes\"}],\"name\":\"executeTransaction\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/core/IPlugin.sol\":\"IPlugin\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":@decentral.ee/=node_modules/@decentral.ee/\",\":@ensdomains/=node_modules/@ensdomains/\",\":@openzeppelin/=node_modules/@openzeppelin/\",\":@superfluid-finance/=node_modules/@superfluid-finance/\",\":@uniswap/=node_modules/@uniswap/\",\":base64-sol/=node_modules/base64-sol/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":forge-std/=lib/forge-std/src/\",\":hardhat-deploy/=node_modules/hardhat-deploy/\",\":hardhat/=node_modules/hardhat/\"]},\"sources\":{\"contracts/core/IPlugin.sol\":{\"keccak256\":\"0x936e672f1541114ecf9c709763c29bc7f3f96e4ececaf2b4dc0b56de24f92924\",\"license\":\"None\",\"urls\":[\"bzz-raw://c56979ab6e25f191e6655af099d16a63118164113fa0d57d8dffb60335fe5f02\",\"dweb:/ipfs/QmbwZatAZa2NLVhmJ6at3MAk1WyFmi2jQaaVp6VPjV9Uou\"]}},\"version\":1}",
   "metadata": {
     "compiler": {
       "version": "0.8.19+commit.7dd6d404"
@@ -111,12 +111,15 @@
     },
     "settings": {
       "remappings": [
+        ":@decentral.ee/=node_modules/@decentral.ee/",
         ":@ensdomains/=node_modules/@ensdomains/",
         ":@openzeppelin/=node_modules/@openzeppelin/",
+        ":@superfluid-finance/=node_modules/@superfluid-finance/",
         ":@uniswap/=node_modules/@uniswap/",
         ":base64-sol/=node_modules/base64-sol/",
         ":ds-test/=lib/forge-std/lib/ds-test/src/",
         ":forge-std/=lib/forge-std/src/",
+        ":hardhat-deploy/=node_modules/hardhat-deploy/",
         ":hardhat/=node_modules/hardhat/"
       ],
       "optimizer": {
@@ -133,12 +136,12 @@
     },
     "sources": {
       "contracts/core/IPlugin.sol": {
-        "keccak256": "0x2c00d6a3771f6388aa779cf0813287c2e47bf9087a3f5561748972725a38648a",
+        "keccak256": "0x936e672f1541114ecf9c709763c29bc7f3f96e4ececaf2b4dc0b56de24f92924",
         "urls": [
-          "bzz-raw://f87ccad34592f12ac8c84d3db1146f25633150c91ec281971214814129fc277a",
-          "dweb:/ipfs/QmWSVH3qmWnZRjXVBZDi4xUNSVRzh7RpPCtZ2qXhakH3cr"
+          "bzz-raw://c56979ab6e25f191e6655af099d16a63118164113fa0d57d8dffb60335fe5f02",
+          "dweb:/ipfs/QmbwZatAZa2NLVhmJ6at3MAk1WyFmi2jQaaVp6VPjV9Uou"
         ],
-        "license": "Unlicense"
+        "license": "None"
       }
     },
     "version": 1
@@ -152,12 +155,12 @@
       ]
     },
     "nodeType": "SourceUnit",
-    "src": "37:143:0",
+    "src": "32:143:0",
     "nodes": [
       {
         "id": 1,
         "nodeType": "PragmaDirective",
-        "src": "37:24:0",
+        "src": "32:24:0",
         "nodes": [],
         "literals": [
           "solidity",
@@ -169,19 +172,19 @@
       {
         "id": 17,
         "nodeType": "ContractDefinition",
-        "src": "63:116:0",
+        "src": "58:116:0",
         "nodes": [
           {
             "id": 16,
             "nodeType": "FunctionDefinition",
-            "src": "87:90:0",
+            "src": "82:90:0",
             "nodes": [],
             "functionSelector": "e20418ef",
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "executeTransaction",
-            "nameLocation": "96:18:0",
+            "nameLocation": "91:18:0",
             "parameters": {
               "id": 14,
               "nodeType": "ParameterList",
@@ -194,7 +197,7 @@
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
                   "scope": 16,
-                  "src": "115:7:0",
+                  "src": "110:7:0",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -205,7 +208,7 @@
                     "id": 2,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "115:7:0",
+                    "src": "110:7:0",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -222,7 +225,7 @@
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
                   "scope": 16,
-                  "src": "124:4:0",
+                  "src": "119:4:0",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -233,7 +236,7 @@
                     "id": 4,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "124:4:0",
+                    "src": "119:4:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -249,7 +252,7 @@
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
                   "scope": 16,
-                  "src": "130:7:0",
+                  "src": "125:7:0",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -260,7 +263,7 @@
                     "id": 6,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "130:7:0",
+                    "src": "125:7:0",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -277,7 +280,7 @@
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
                   "scope": 16,
-                  "src": "139:4:0",
+                  "src": "134:4:0",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -288,7 +291,7 @@
                     "id": 8,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "139:4:0",
+                    "src": "134:4:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -304,7 +307,7 @@
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
                   "scope": 16,
-                  "src": "145:7:0",
+                  "src": "140:7:0",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -315,7 +318,7 @@
                     "id": 10,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "145:7:0",
+                    "src": "140:7:0",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -332,7 +335,7 @@
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
                   "scope": 16,
-                  "src": "154:12:0",
+                  "src": "149:12:0",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -343,7 +346,7 @@
                     "id": 12,
                     "name": "bytes",
                     "nodeType": "ElementaryTypeName",
-                    "src": "154:5:0",
+                    "src": "149:5:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes_storage_ptr",
                       "typeString": "bytes"
@@ -352,13 +355,13 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "114:53:0"
+              "src": "109:53:0"
             },
             "returnParameters": {
               "id": 15,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "176:0:0"
+              "src": "171:0:0"
             },
             "scope": 17,
             "stateMutability": "nonpayable",
@@ -376,12 +379,12 @@
           17
         ],
         "name": "IPlugin",
-        "nameLocation": "73:7:0",
+        "nameLocation": "68:7:0",
         "scope": 18,
         "usedErrors": []
       }
     ],
-    "license": "Unlicense"
+    "license": "None"
   },
   "id": 0
 }

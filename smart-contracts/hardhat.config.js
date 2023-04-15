@@ -43,6 +43,9 @@ module.exports = {
       timeout: 0,
     },
   },
+  etherscan: {
+    apiKey: "4Y42Z4WA94GHR6M5279Y64HYI5SMJGPJ88"
+  },
   namedAccounts: {
     deployer: 0
   }

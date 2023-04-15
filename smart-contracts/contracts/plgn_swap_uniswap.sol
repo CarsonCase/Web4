@@ -1,4 +1,4 @@
-//SPDX-License-Identifier: Unlicense
+//SPDX-License-Identifier: None
 pragma solidity ^0.8.19;
 
 import {IPlugin} from "./core/IPlugin.sol";
