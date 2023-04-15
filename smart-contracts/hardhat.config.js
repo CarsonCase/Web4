@@ -34,6 +34,11 @@ module.exports = {
       chainId: 80001,
       accounts: [pkey]
     },  
+    celoTest: {
+      url: "https://alfajores-forno.celo-testnet.org",
+      chainId: 44787,
+      accounts: [pkey]
+    },    
     hardhat: {
       accounts: forkingAccounts,
       forking: {
